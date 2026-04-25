@@ -1,0 +1,14 @@
+{
+  "name": "monadpass",
+  "private": true,
+  "version": "0.0.1",
+  "workspaces": [
+    "app",
+    "contracts"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace app",
+    "compile": "npm run compile --workspace contracts",
+    "test:contracts": "npm run test --workspace contracts"
+  }
+}
