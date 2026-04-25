@@ -1,5 +1,5 @@
 import { BrowserProvider, Contract, JsonRpcProvider } from "ethers";
-import { EVENT_TICKET_ABI, MONADPASS_CORE_ABI } from "./abis";
+import { COMMEMORATIVE_BADGE_ABI, EVENT_TICKET_ABI, MONADPASS_CORE_ABI } from "./abis";
 import { LOCAL_CONTRACTS } from "./contracts";
 
 declare global {
@@ -54,6 +54,16 @@ export function getReadCoreContract() {
 
 export function getReadTicketContract() {
   return new Contract(LOCAL_CONTRACTS.eventTicket, EVENT_TICKET_ABI, getReadProvider());
+}
+
+export function getReadBadgeContract() {
+  return new Contract(LOCAL_CONTRACTS.commemorativeBadge, COMMEMORATIVE_BADGE_ABI, getReadProvider());
+}
+
+export async function getConnectedAddress() {
+  const provider = await getBrowserProvider();
+  const signer = await provider.getSigner();
+  return signer.getAddress();
 }
 
 export async function getWriteCoreContract() {

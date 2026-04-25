@@ -53,6 +53,17 @@ input {
   color: var(--fg);
 }
 
+textarea {
+  width: 100%;
+  margin-top: 0.35rem;
+  padding: 0.7rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #2f2f46;
+  background: #10101a;
+  color: var(--fg);
+  resize: vertical;
+}
+
 label {
   display: block;
   font-weight: 600;

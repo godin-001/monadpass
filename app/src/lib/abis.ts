@@ -11,3 +11,8 @@ export const EVENT_TICKET_ABI = [
   "function eventIdOf(uint256 tokenId) view returns (uint256)",
   "function used(uint256 tokenId) view returns (bool)",
 ] as const;
+
+export const COMMEMORATIVE_BADGE_ABI = [
+  "function badgeTokenOf(address owner,uint256 eventId) view returns (uint256)",
+  "function hasBadge(address owner,uint256 eventId) view returns (bool)",
+] as const;
